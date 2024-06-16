@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     background-color: #481D24;
@@ -10,53 +22,173 @@ body{
 h1{
     font-size: 5em;
     font-weight: 900;
+    font-family: "Sedan SC", serif;
+}
+h2{
+    font-size: 3.5em;
+    font-weight: 900;
+    font-family: "Sedan SC", serif;
+}
+h3{
+    font-size: 2.5em;
+    font-weight: 900;
+    font-family: "Sedan SC", serif;
 }
 
-h2{
-    font-size: 3em;
-    font-weight: 900;
-}
 
 section{
-    margin: 0 auto;
+    margin: 0;
     max-width: 100%;
-    padding: 20px;
+    min-height: 100vh;
+    /* border: 2px solid #F8F2DC; */
+}
+
+section:nth-child(odd){
+    background-color: #F8F2DC;
+    color: #481D24;
 }
 
 a{
     color: #F8F2DC;
     text-decoration: none;
+    font-family: "Merriweather", serif;
     transition: 0.2s;
-}
-
-footer{
-    text-align: center;
-    margin-top: auto;
 }
 
 a:hover{
     text-decoration: underline;
 }
 
+footer{
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+}
+
 .header-container{
+    position: absolute;
     display: flex;
+    width: 100%;
+    padding: 10px;
+    background-color: #481D24;
     justify-content: space-around;
+    border-bottom: 2px solid #F8F2DC;
+    z-index: 101;
 }
 
 .header-container h1{
-    font-size: 2.5em;
+    font-size: 1.5em;
     font-weight: 900;
+    text-decoration: none;
+    padding: 20px;
 }
-
-.header-container ul{
+.header-container h1 a{
+    color: #F8F2DC;
+    text-decoration: none;
+}
+.header-nav{
     display: flex;
-    list-style-type: none;
     gap: 10px;
+    align-items: center;
+}
+.header-nav a{
+    font-size: 1em;
+    font-weight: 700;
+    padding: 10px;
 }
 
 
+section [id="home"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
 .home-container{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 20px;
+    height: 100vh;
+    background-image: url(/img/mustkõuts-suursaal-visittorva.jpg);
+    background-size: cover;
+}
+
+.welcome-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25% 10% 15% 10%;
+    height: inherit;
+    background-color: #481D24;
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 90% 100%);
+    max-width: 70%;
+}
+.welcome-text h1{
+    margin: 0;
+    text-align: center;
+}
+.welcome-text h3{
+    margin: 0;
+    text-align: center;
+    color: #F8F2DC;
+}
+.welcome-text-additional{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0px;
+}
+.welcome-button{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+}
+.welcome-button button{
+    background-color: #481D24;
+    color: #F8F2DC;
+    border: 2px solid #F8F2DC;
+    font-size: 1.5em;
+    padding: 20px 40px;
+    transition: 0.2s;
+}
+.welcome-button button > a{
+    color: #F8F2DC;
+    text-decoration: none;
+}
+.welcome-button button:hover{
+    background-color: #F8F2DC;
+    transform: translate(0px, -3px);
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.welcome-button button:hover > a{
+    color: #481D24;
+    text-decoration: none;
+}
+
+
+
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+    height: 100vh;
+    background-color: #F8F2DC;
+}
+
+.about-container h1{
+    padding: 20px 0px;
+    width: 50%;
+}
+
+.about-text{ 
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 50%;
+    font-size: 1.5em;
+    line-height: 1.5em;
 }

@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <div class="header-container">
+        <div class="header-container" id="Header">
             <h1>
                 <a href="#home">MUST KÕUTS</a>
             </h1>
@@ -27,11 +27,11 @@
         <section id="home">
             <div class="home-container">
                 <div class="welcome-text">
-                    <h1>Tere tulemast,</h1>
-                    <h1>Musta Kõutsi</h1>
-                    <h1>Kõrtsi!</h1>
-                    <div class="welcome-text-additional">
-                        <h3>avatud 11.00-15.00</h3>
+                    <h1 class="hidden">Tere tulemast,</h1>
+                    <h1 class="hidden">Musta Kõutsi</h1>
+                    <h1 class="hidden">Kõrtsi!</h1>
+                    <div class="welcome-text-additional hidden">
+                        <h3>avatud 11.00 - 15.00</h3>
                         <h3>tõrva, 68606 valga</h3>
                     </div>
                     <div class="welcome-button">
@@ -44,33 +44,88 @@
         </section>
         <section id="about">
             <div class="about-container">
-                <h1>Veidi meie kohta</h1>
-                <div class="about-text"> 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="about-content">
+                    <h1 class="hidden">Veidi meie kohta</h1>
+                    <div class="about-text hidden"> 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="menu">
+        <section id="menu" class="hidden">
             <div class="menu-container">
-
+                <div class="menu-content">
+                    <div class="menu-header">
+                        <h1>Grupimenüü</h1>
+                    </div>
+                    <div class="menu hidden">
+                        <div class="menu-item">
+                            <h3>Supid</h3>
+                            <b>1. Borš</b>
+                            <b>2. Seljanka</b>
+                            <b>3. Kana-nuudlisupp</b>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Põhiroad</h3>
+                            <b>1. Kanafilee</b>
+                            <b>2. Seapraad</b>
+                            <b>3. Kalafilee</b>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Magustoidud</h3>
+                            <b>1. Pannkoogid</b>
+                            <b>2. Kama</b>
+                            <b>3. Kook</b>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="events">
             <div class="events-container">
-
+                <div class="events">
+                    <div class="event">
+                        <img width="300">
+                        <h3>Üritus</h3>
+                        <p>Ürituse kirjeldus</p>
+                    </div>
+                    <div class="event">
+                        <img width="300">
+                        <h3>Üritus</h3>
+                        <p>Ürituse kirjeldus</p>
+                    </div>
+                    <div class="event">
+                        <img width="300">
+                        <h3>Üritus</h3>
+                        <p>Ürituse kirjeldus</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="gallery">
             <div class="gallery-container">
-
+                <div class="images hidden">
+                    <div class="image">
+                        <img src="/img/mustkõuts-visittorva-visitestonia.jpg">
+                    </div>
+                    <div class="image">
+                        <img src="/img/mustkõuts-suursaal-visittorva.jpg">
+                    </div>
+                    <div class="image">
+                        <img src="/img/mustakõutsi-visittorva-visitestonia.jpg">
+                    </div>
+                    <div class="image">
+                        <img src="/img/mustk-visittorva-visitviljandi2.jpg">
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="reservation">
+        <section id="reservation" class="hidden">
             <div class="reservation-container">
 
             </div>
         </section>
-        <section id="partners">
+        <section id="partners" class="hidden">
             <div class="partners-container">
 
             </div>
@@ -81,9 +136,61 @@
             </div>
         </section>
         <footer>
-            <p>© 2024 Must Kõuts</p>
+            <b>© 2024 Must Kõuts</b>
         </footer>
     </div>
 </body>
 
+
+<script>
+    //image carousel using the background image of the container
+    let imageIndex = 0;
+    const images = [
+        "/img/mustkõuts-visittorva-visitestonia.jpg",
+        "/img/mustkõuts-suursaal-visittorva.jpg",
+        "/img/mustakõutsi-visittorva-visitestonia.jpg",
+        "/img/mustk-visittorva-visitviljandi2.jpg",
+        "/img/mustkõuts-terrass-visittorva.jpg",
+        "/img/mustkõuts-visittorva1.jpg",
+        "/img/puhkenurk-mustkõuts-tõrva.jpg"
+    ];
+    const imageContainer = document.querySelector(".home-container");
+    setInterval(() => {
+        imageContainer.style.backgroundImage = `url(${images[imageIndex]})`;
+        imageIndex++;
+        if (imageIndex >= images.length) {
+            imageIndex = 0;
+        }
+    }, 5000);
+
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show')
+            }
+        })
+    })
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((element) => {
+        observer.observe(element);
+    })
+    
+
+    var header = document.getElementById("Header")
+    var sticky = header.offsetTop
+    
+
+    const stickyHeader = () => {
+        if (window.pageYOffset  > sticky) {
+            header.classList.add("sticky")
+        } else {
+            header.classList.remove("sticky")
+        }
+    }
+
+    window.onscroll = () => stickyHeader()
+</script>
 </html>

@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="../styles/index.css"/>
 </head>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <body>
     <div class="container">
         <div class="header-container" id="Header">
             <h1>
                 <a href="#home">MUST KÕUTS</a>
             </h1>
-            <div class="header-nav">
+            <div class="header-nav" id="headerNav">
                 <a href="#about">Meist</a>
                 <a href="#menu">Grupimenüü</a>
                 <a href="#events">Sündmused</a>
@@ -22,6 +26,9 @@
                 <a href="#reservation">Broneeri</a>
                 <a href="#partners">Partnerid</a>
                 <a href="#contact">Kontakt</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
         </div>
         <section id="home">
@@ -31,8 +38,8 @@
                     <h1 class="hidden">Musta Kõutsi</h1>
                     <h1 class="hidden">Kõrtsi!</h1>
                     <div class="welcome-text-additional hidden">
-                        <h3>avatud 11.00 - 15.00</h3>
-                        <h3>tõrva, 68606 valga</h3>
+                        <h3>avatud E-R 11.00 - 15.00</h3>
+                        <h4>Tartu tn 2a, Tõrva linn, Tõrva vald, Valga maakond</h4>
                     </div>
                     <div class="welcome-button">
                         <button>
@@ -83,7 +90,7 @@
         </section>
         <section id="events">
             <div class="events-container">
-                <div class="events">
+                <div class="events hidden">
                     <div class="event">
                         <img width="300">
                         <h3>Üritus</h3>
@@ -104,39 +111,72 @@
         </section>
         <section id="gallery">
             <div class="gallery-container">
-                <div class="images hidden">
-                    <div class="image">
-                        <img src="/img/mustkõuts-visittorva-visitestonia.jpg">
+                <div class="row">
+                    <div class="column">
+                        <img src="/assets/img/mustkõuts-visittorva-visitestonia.jpg">
+                        <img src="/assets/img/mustkõuts-suursaal-visittorva.jpg">
+                        <img src="/assets/img/mustakõutsi-visittorva-visitestonia.jpg">
+                        <img src="/assets/img/mustk-visittorva-visitviljandi2.jpg">                    
                     </div>
-                    <div class="image">
-                        <img src="/img/mustkõuts-suursaal-visittorva.jpg">
+                    <div class="column">
+                        <img src="/assets/img/mustkõuts-terrass-visittorva.jpg">
+                        <img src="/assets/img/mustkõuts-visittorva1.jpg">
+                        <img src="/assets/img/puhkenurk-mustkõuts-tõrva.jpg">
                     </div>
-                    <div class="image">
-                        <img src="/img/mustakõutsi-visittorva-visitestonia.jpg">
-                    </div>
-                    <div class="image">
-                        <img src="/img/mustk-visittorva-visitviljandi2.jpg">
+                    <div class="column">
+                        <img src="/assets/img/mustkõuts-visittorva.jpg">
+                        <img src="/assets/img/magustoit-mustakõutsikõrts-visittorva.jpg">
+                        <img src="/assets/img/kõrtsisissepääs-mustkõuts-visittorva.jpg">
                     </div>
                 </div>
             </div>
         </section>
         <section id="reservation" class="hidden">
             <div class="reservation-container">
-
+                <h2>Broneeri laud</h2>
+                <form>
+                    <label for="name">Nimi</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone">
+                    <label for="date">Kuupäev</label>
+                    <input type="date" id="date" name="date">
+                    <label for="time">Kellaaeg</label>
+                    <input type="time" id="time" name="time">
+                    <label for="people">Inimeste arv</label>
+                    <input type="number" id="people" name="people">
+                    <button type="submit">Broneeri</button>
+                </form>
             </div>
         </section>
         <section id="partners" class="hidden">
             <div class="partners-container">
-
+                <h1>Meie partnerid</h1>
+                <div class="partner">
+                    <img>
+                </div>
+                <div class="partner">
+                    <img>
+                </div>
             </div>
         </section>
-        <section id="contact">
+        <footer id="contact">
             <div class="contact-container">
-
+                <div class="contact-info">
+                    <h3>Must Kõuts</h3>
+                    <b>Musta Kõutsi Kõrts</b>
+                    <b>Tartu tn 2a, Tõrva linn, Tõrva vald, Valga maakond</b>
+                    <b>68606</b>
+                    <b>info@mustkouts.ee</b>
+                    <b>+372 520 5588</b>
+                </div>
+                <div class="social-info">
+                    <a href="https://www.facebook.com/profile.php?id=100063668694985" target="_blank"><img src="/assets/icons/icons8-facebook.svg"><p>Facebook</p></a>
+                </div>
             </div>
-        </section>
-        <footer>
-            <b>© 2024 Must Kõuts</b>
+            <b class="footer-bottom">© 2024 Must Kõuts</b>
         </footer>
     </div>
 </body>
@@ -146,13 +186,13 @@
     //image carousel using the background image of the container
     let imageIndex = 0;
     const images = [
-        "/img/mustkõuts-visittorva-visitestonia.jpg",
-        "/img/mustkõuts-suursaal-visittorva.jpg",
-        "/img/mustakõutsi-visittorva-visitestonia.jpg",
-        "/img/mustk-visittorva-visitviljandi2.jpg",
-        "/img/mustkõuts-terrass-visittorva.jpg",
-        "/img/mustkõuts-visittorva1.jpg",
-        "/img/puhkenurk-mustkõuts-tõrva.jpg"
+        "/assets/img/mustkõuts-visittorva-visitestonia.jpg",
+        "/assets/img/mustkõuts-suursaal-visittorva.jpg",
+        "/assets/img/mustakõutsi-visittorva-visitestonia.jpg",
+        "/assets/img/mustk-visittorva-visitviljandi2.jpg",
+        "/assets/img/mustkõuts-terrass-visittorva.jpg",
+        "/assets/img/mustkõuts-visittorva1.jpg",
+        "/assets/img/puhkenurk-mustkõuts-tõrva.jpg"
     ];
     const imageContainer = document.querySelector(".home-container");
     setInterval(() => {
@@ -184,7 +224,7 @@
     
 
     const stickyHeader = () => {
-        if (window.pageYOffset  > sticky) {
+        if (window.pageYOffset  > sticky && window.innerWidth > 1024) {
             header.classList.add("sticky")
         } else {
             header.classList.remove("sticky")
@@ -192,5 +232,18 @@
     }
 
     window.onscroll = () => stickyHeader()
+
+
+    function myFunction() {
+    var header = document.getElementById("headerNav");
+    var headerContainer = document.getElementById("Header");
+    if (header.className === "header-nav") {
+        header.className += " responsive";
+        headerContainer.className += " responsive";
+    } else {
+        header.className = "header-nav";
+        headerContainer.className = "header-container";
+    }
+    }
 </script>
 </html>

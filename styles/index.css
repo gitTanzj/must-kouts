@@ -174,7 +174,7 @@ footer{
     height: 100vh;
     background-image: url(/assets/img/mustkõuts-suursaal-visittorva.jpg);
     background-size: cover;
-    transition: background-image 0.5s;
+    transition: all 0.5s;
 }
 
 .welcome-text{
@@ -354,28 +354,53 @@ footer{
 }
 
 
+section[id="events"]{
+    display: flex;
+    flex-direction: column;
+}
+
 .events-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 .events{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    height: 60vh;
-    width: 80%;
+    display: none;
+    width: 100%;
 }
 .event{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5%;
-    padding: 2.5%;
+    justify-content: space-around;
+    padding: 5%;
     background-color: #F8F2DC;
     color:#481D24;
-    border-radius: 5px;
+}
+.event-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dots{
+    display: flex;
+    padding: 1em;
+    justify-content: center;
+    background-color: #F8F2DC;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .dot:hover {
+    background-color: #717171;
 }
 
 @media screen and (max-width: 1024px){

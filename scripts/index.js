@@ -13,7 +13,8 @@ const imageContainer = document.querySelector(".home-container");
 setInterval(() => {
     imageContainer.style.backgroundImage = `url(${carouselImages[imageIndex]})`;
     imageIndex++;
-    if (imageIndex >= images.length) {
+    console.log(imageIndex);
+    if (imageIndex >= carouselImages.length) {
         imageIndex = 0;
     }
 }, 5000);
@@ -39,7 +40,7 @@ var sticky = header.offsetTop
 
 
 const stickyHeader = () => {
-    if (window.pageYOffset  > sticky && window.innerWidth > 1024) {
+    if (window.scrollY  > sticky && window.innerWidth > 1024) {
         header.classList.add("sticky")
     } else {
         header.classList.remove("sticky")
@@ -49,7 +50,7 @@ const stickyHeader = () => {
 window.onscroll = () => stickyHeader()
 
 
-function myFunction() {
+function headerFunction() {
     var header = document.getElementById("headerNav");
     var headerContainer = document.getElementById("Header");
     if (header.className === "header-nav") {
@@ -61,6 +62,28 @@ function myFunction() {
     }
 }
 
+let eventIndex = 1;
+showEvents(eventIndex);
+
+function currentEvent(n) {
+    showEvents(eventIndex = n);
+}
+
+function showEvents(n){
+    let i;
+    let events = document.getElementsByClassName("event");
+    let dots = document.getElementsByClassName("dot");
+    if (n > events.length) {eventIndex = 1}
+    if (n < 1) {eventIndex = events.length}
+    for(i = 0; i < events.length; i++) {
+        events[i].style.display = "none";
+    }
+    for(i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    events[eventIndex-1].style.display = "block";
+    dots[eventIndex-1].className += " active";
+}
 
 // Get the modal
 var modal = document.getElementById("imageModal");

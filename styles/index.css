@@ -49,6 +49,7 @@ section{
     margin: 0;
     width: 100%;
     min-height: 100vh;
+    scroll-margin-top: 100px;
 }
 
 a{
@@ -131,12 +132,10 @@ footer{
     text-decoration: none;
 }
 
- /* Hide the link that should open and close the topnav on small screens */
  .header-nav .icon {
     display: none;
   }
 
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 1024px) {
     .header-nav a:not(:first-child) {display: none;}
 
@@ -146,7 +145,7 @@ footer{
     }
   }
 
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
 @media screen and (max-width: 1024px) {
     .header-container.responsive{
         flex-direction: column;
@@ -172,7 +171,7 @@ footer{
     display: flex;
     align-items: center;
     height: 100vh;
-    background-image: url(/assets/img/mustkõuts-suursaal-visittorva.jpg);
+    background-image: url(../assets/img/mustkõuts-suursaal-visittorva.jpg);
     background-size: cover;
     transition: all 0.5s;
 }
@@ -255,16 +254,17 @@ footer{
 
 .about-container{
     display: flex;
-    justify-content: center;
-    height: 100vh;
+    justify-content: space-around;
+    min-height: 90vh;
     background-color: #F8F2DC;
     color: #481D24;
 }
 
 .about-container h1{
+    text-align: center;
     padding: 0.5em 0em;
     line-height: 1em ;
-    width: 50%;
+    width: 100%;
 }
 
 .about-content{
@@ -272,32 +272,56 @@ footer{
     flex-direction: column;
     justify-content: center;
     padding: 1em;
-    width: 80%;
+    width: 50%;
 }
 .about-text{ 
     display: flex;
     flex-direction: column;
-    text-align: justify;
+    text-align: center;
     font-weight: 700;
-    width: 50%;
+    width: 100%;
     font-size: 1.5em;
     line-height: 1.5em;
 }
 
+.about-images{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+.about-images img{
+    width: 100%;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 1024px){
-    .about-container h2{
+    .about-container{
+        flex-direction: column;
+    }
+    .about-container h1{
+        text-align: center;
+        width: 100%;
+    }
+    .about-content{
+        width: 100%;
+    }
+    .about-images{
+        padding: 1em;
         width: 100%;
     }
     .about-text{
         font-size: 1em;
-        width: 90%;
+        width: 100%;
+        text-align: center;
     }
 }
 
 .menu-container{
     display: flex;
     justify-content: center;
-    height: 100vh;
 }
 
 .menu-header{
@@ -312,6 +336,7 @@ footer{
     justify-content: space-around;
     align-items: center;
     width: 80%;
+    padding: 2em;
 }
 
 .menu{
@@ -346,6 +371,7 @@ footer{
         padding: 2em;
     }
     .menu-content{
+        width: 100%;
         flex-direction: column;
     }
     .menu{
@@ -355,8 +381,9 @@ footer{
 
 
 section[id="events"]{
-    display: flex;
-    flex-direction: column;
+    scroll-padding-top: 100px;
+    min-height: 60vh;
+    margin-bottom: 2em;
 }
 
 .events-container{
@@ -365,47 +392,79 @@ section[id="events"]{
     align-items: center;
 }
 .events{
-    display: none;
     width: 100%;
+    background-color: #F8F2DC;
+    display: flex;
+    justify-content: center;
 }
 .event{
-    display: flex;
+    display: none;
+    opacity: 0;
     justify-content: space-around;
-    padding: 5%;
-    background-color: #F8F2DC;
+    padding: 5%;    
+    min-height: 50vh;
+    width: 80%;
     color:#481D24;
+    transition: all 0.4s;
+}
+.event img{
+    width: 30%;
+    border-radius: 5px;
 }
 .event-text{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 50%;
 }
-
-.dots{
-    display: flex;
-    padding: 1em;
-    justify-content: center;
-    background-color: #F8F2DC;
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+.event-text h2{
+    padding-bottom: 0.5em;
 }
   
-.active, .dot:hover {
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    padding: 20px;
+    color:#481D24;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev{
+    left: 0;
+    border-radius: 0px 3px 3px 0px;
+}
+
+.prev:hover, .next:hover {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color:#F8F2DC;
+}
+
+.active {
     background-color: #717171;
 }
 
 @media screen and (max-width: 1024px){
-    .events{
-        grid-template-columns: minmax(300px, 1fr);
+    .event{
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+    .event-text{
+        width: 100%;
+    }
+    .event img{
+        width: 100%;
     }
 }
 
@@ -436,7 +495,6 @@ section[id="gallery"]{
     padding: 0 4px;
   }
   
-  /* Create three equal columns that sits next to each other */
   .column {
     flex: 33.3%;
     max-width: 33.3%;
@@ -449,7 +507,6 @@ section[id="gallery"]{
     width: 100%;
   }
   
-  /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 1024px) {
     .column {
       flex: 50%;
@@ -457,7 +514,6 @@ section[id="gallery"]{
     }
   }
   
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 768px) {
     .column {
       flex: 100%;
@@ -491,6 +547,7 @@ section[id="partners"]{
 }
 .partner{
     width: 40%;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -499,17 +556,14 @@ section[id="partners"]{
     padding: 5%;
 }
 
-.location-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #F8F2DC;
-    color: #481D24;
-}
-.location iframe{
-    width: 100%;
-    border: 0;
+@media screen and (max-width: 1024px){
+    .partners{
+        flex-direction: column;
+        gap: 1em;
+    }
+    .partner{
+        width: 90%;
+    }
 }
 
 .contact-container{
@@ -526,6 +580,9 @@ section[id="partners"]{
     display: flex;
     flex-direction: column;
     justify-content: center;  
+}
+.contact-info a{
+    color:#481D24;
 }
 
 .social-info{
@@ -548,6 +605,19 @@ section[id="partners"]{
     justify-content: center;
     align-items: center;
     padding: 1em;
+}
+
+@media screen and (max-width: 1024px){
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-info{
+        padding: 1em;
+    }
+    .social-info{
+        padding: 1em;
+    }
+    
 }
 
 .hidden{
@@ -575,22 +645,21 @@ section[id="partners"]{
 
 
 
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1002; /* Sit on top */
-    padding-top: 200px; /* Location of the box */
+    display: none;
+    position: fixed;
+    align-items: center;
+    z-index: 1002;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
   }
   
-  /* Modal Content (Image) */
   .modal-content {
     margin: auto;
     display: block;
@@ -598,7 +667,6 @@ section[id="partners"]{
     max-width: 700px;
   }
   
-  /* Add Animation - Zoom in the Modal */
   .modal-content{
     animation-name: zoom;
     animation-duration: 0.6s;
@@ -609,7 +677,6 @@ section[id="partners"]{
     to {transform:scale(1)}
   }
   
-  /* The Close Button */
   .close {
     position: absolute;
     top: 15px;
@@ -627,9 +694,8 @@ section[id="partners"]{
     cursor: pointer;
   }
   
-  /* 100% Image Width on Smaller Screens */
   @media only screen and (max-width: 700px){
     .modal-content {
-      width: 100%;
+        width: 100%;
     }
   }

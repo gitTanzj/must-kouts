@@ -1,19 +1,18 @@
 //image carousel using the background image of the container
 let imageIndex = 0;
 const carouselImages = [
-    "/assets/img/mustkõuts-visittorva-visitestonia.jpg",
-    "/assets/img/mustkõuts-suursaal-visittorva.jpg",
-    "/assets/img/mustakõutsi-visittorva-visitestonia.jpg",
-    "/assets/img/mustk-visittorva-visitviljandi2.jpg",
-    "/assets/img/mustkõuts-terrass-visittorva.jpg",
-    "/assets/img/mustkõuts-visittorva1.jpg",
-    "/assets/img/puhkenurk-mustkõuts-tõrva.jpg"
+    "../assets/img/mustkõuts-visittorva-visitestonia.jpg",
+    "../assets/img/mustkõuts-suursaal-visittorva.jpg",
+    "../assets/img/mustakõutsi-visittorva-visitestonia.jpg",
+    "../assets/img/mustk-visittorva-visitviljandi2.jpg",
+    "../assets/img/mustkõuts-terrass-visittorva.jpg",
+    "../assets/img/mustkõuts-visittorva1.jpg",
+    "../assets/img/puhkenurk-mustkõuts-tõrva.jpg",
 ];
 const imageContainer = document.querySelector(".home-container");
 setInterval(() => {
     imageContainer.style.backgroundImage = `url(${carouselImages[imageIndex]})`;
-    imageIndex++;
-    console.log(imageIndex);
+    imageIndex++; 
     if (imageIndex >= carouselImages.length) {
         imageIndex = 0;
     }
@@ -22,7 +21,6 @@ setInterval(() => {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry);
         if(entry.isIntersecting) {
             entry.target.classList.add('show')
         }
@@ -62,46 +60,53 @@ function headerFunction() {
     }
 }
 
-let eventIndex = 1;
+let eventIndex = 0;
 showEvents(eventIndex);
 
-function currentEvent(n) {
-    showEvents(eventIndex = n);
+function plusEvents(n) {
+    showEvents(eventIndex += n);
 }
 
 function showEvents(n){
     let i;
     let events = document.getElementsByClassName("event");
-    let dots = document.getElementsByClassName("dot");
     if (n > events.length) {eventIndex = 1}
     if (n < 1) {eventIndex = events.length}
     for(i = 0; i < events.length; i++) {
         events[i].style.display = "none";
+        events[i].style.opacity = "0";
+        events[i].style.transform = "translateY(-25px)";
     }
-    for(i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    events[eventIndex-1].style.display = "block";
-    dots[eventIndex-1].className += " active";
+    events[eventIndex-1].style.display = "flex";
+
+    setTimeout(() => {
+        events[eventIndex-1].style.opacity = "1";
+        events[eventIndex-1].style["transform"] = "translateY(0px)";
+    }, 10);
 }
 
+
+
+
 // Get the modal
-var modal = document.getElementById("imageModal");
+let modal = document.getElementById("imageModal");
+
+let modalImg = document.getElementById("img01");
+let captionText = document.getElementById("caption");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var galleryImages = document.getElementsByClassName('gallery-image');
-    for (var i = 0; i < galleryImages.length; i++) {
-        galleryImages[i].onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
+let galleryImages = document.getElementsByClassName("gallery-image");
+
+for (var i = 0; i < galleryImages.length; i++) {
+    galleryImages[i].onclick = function () {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
     }
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
+};
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {

@@ -15,17 +15,17 @@
 <body>
     <div class="container">
         <!-- The Modal -->
-            <div id="imageModal" class="modal">
+        <div id="imageModal" class="modal">
 
-                <!-- The Close Button -->
-                <span class="close">&times;</span>
-            
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
-            
-                <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
-            </div>
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+        
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+        
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
         <div class="header-container" id="Header">
             <h1>
                 <a href="#home">MUST KÕUTS</a>
@@ -33,7 +33,7 @@
             <div class="header-nav" id="headerNav">
                 <a href="#about">Meist</a>
                 <a href="#menu">Grupimenüü</a>
-                <a href="#events">Sündmused</a>
+                <a href="#events">Üritused</a>
                 <a href="#gallery">Galerii</a>
                 <a href="#partners">Partnerid</a>
                 <a href="#contact">Kontakt</a>
@@ -49,13 +49,8 @@
                     <h1 class="hidden">Musta Kõutsi</h1>
                     <h1 class="hidden">Kõrtsi!</h1>
                     <div class="welcome-text-additional hidden">
-                        <h3>avatud E-R 11.00 - 15.00</h3>
+                        <h3>avatud E-R 11.00 - 15.00<br>L-P ettetellimisel</h3>
                         <h4>Tartu tn 2a, Tõrva linn, Tõrva vald, Valga maakond</h4>
-                    </div>
-                    <div class="welcome-button">
-                        <button>
-                            <a href="#reservation">Broneeri laud</a>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -64,9 +59,24 @@
             <div class="about-container">
                 <div class="about-content">
                     <h1 class="hidden">Veidi meie kohta</h1>
-                    <div class="about-text hidden"> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
+                    <div class="about-text hidden">
+                        <b>
+                            Must Kõuts on restoran looduskaunis Tõrva linnas,
+                            kus oleme tegutsenud toitlustuskohana juba 20 aastat.
+                        </b><br>
+                        <b>
+                            Me toitlustame gruppe, pakume catering teenust, paneme kokku
+                            sünnipäeva- ja peielaudasid.
+                        </b><br>
+                        <b>
+                            Oleme võimelised
+toitlustama kuni 200 inimest.
+                        </b>
+                    </div> 
+                </div>
+                <div class="about-images">
+                    <img src="../assets/img/1.jpg">
+                    <img src="../assets/img/15.jpg">
                 </div>
             </div>
         </section>
@@ -102,45 +112,61 @@
         <section id="events">
             <div class="events-container">
                 <div class="events">
-                    <div class="event">
-                            <div class="event-text">
-                                <h2>Joel Ostrat käis külas</h2>
-                                <p>Ürituse kirjeldus</p>
-                            </div>
-                        <img src="../assets/img/magustoit-mustakõutsikõrts-visittorva.jpg" width="300">
+                    <div class="event show">
+                        <div class="event-text">
+                            <h2>Joel Ostrat käis külas</h2>
+                            <b>Ürituse kirjeldus</b>
+                        </div>
+                        <img src="../assets/img/magustoit-mustakõutsikõrts-visittorva.jpg">
                     </div>
-                    <div class="event">
+                    <div class="event show">
                         <div class="event-text">
                             <h2>Mingi muu üritus</h2>
-                            <p>Ürituse kirjeldus</p>
+                            <b>                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </b>
                         </div>
-                        <img src="../assets/img/magustoit-mustakõutsikõrts-visittorva.jpg" width="300"> 
+                        <img src="../assets/img/magustoit-mustakõutsikõrts-visittorva.jpg"> 
                     </div>
                 </div>
-            </div>
-            <div class="dots">
-                <span class="dot" onclick="currentEvent(0)"></span>
-                <span class="dot" onclick="currentEvent(1)"></span>
+
+                <a class="prev" onclick="plusEvents(-1)">&#10094;</a>
+                <a class="next" onclick="plusEvents(1)">&#10095;</a>
             </div>
         </section>
         <section id="gallery">
             <div class="gallery-container">
                 <div class="row">
                     <div class="column">
-                        <img src="/assets/img/mustkõuts-visittorva-visitestonia.jpg" class="gallery-image">
-                        <img src="/assets/img/mustkõuts-suursaal-visittorva.jpg" class="gallery-image">
-                        <img src="/assets/img/mustakõutsi-visittorva-visitestonia.jpg" class="gallery-image">
-                        <img src="/assets/img/mustk-visittorva-visitviljandi2.jpg" class="gallery-image">                    
+                        <img src="../assets/img/mustkõuts-visittorva-visitestonia.jpg" class="gallery-image">
+                        <img src="../assets/img/mustkõuts-suursaal-visittorva.jpg" class="gallery-image">
+                        <img src="../assets/img/mustakõutsi-visittorva-visitestonia.jpg" class="gallery-image">
+                        <img src="../assets/img/mustk-visittorva-visitviljandi2.jpg" class="gallery-image">
+                        <img src="../assets/img/2.jpg" class="gallery-image">          
+                        <img src="../assets/img/5.jpg" class="gallery-image">
+                        <img src="../assets/img/9.jpg" class="gallery-image"> 
+                        <img src="../assets/img/12.jpg" class="gallery-image">   
+                        <img src="../assets/img/15.jpg" class="gallery-image">  
                     </div>
                     <div class="column">
-                        <img src="/assets/img/mustkõuts-terrass-visittorva.jpg" class="gallery-image">
-                        <img src="/assets/img/mustkõuts-visittorva1.jpg" class="gallery-image">
-                        <img src="/assets/img/puhkenurk-mustkõuts-tõrva.jpg" class="gallery-image">
+                        <img src="../assets/img/mustkõuts-terrass-visittorva.jpg" class="gallery-image">
+                        <img src="../assets/img/mustkõuts-visittorva1.jpg" class="gallery-image">
+                        <img src="../assets/img/puhkenurk-mustkõuts-tõrva.jpg" class="gallery-image">
+                        <img src="../assets/img/1.jpg" class="gallery-image">
+                        <img src="../assets/img/7.jpg" class="gallery-image">
+                        <img src="../assets/img/8.jpg" class="gallery-image">
+                        <img src="../assets/img/11.jpg" class="gallery-image">
+                        <img src="../assets/img/14.jpg" class="gallery-image">
+                        <img src="../assets/img/17.jpg" class="gallery-image">
                     </div>
                     <div class="column">
-                        <img src="/assets/img/mustkõuts-visittorva.jpg" class="gallery-image">
-                        <img src="/assets/img/magustoit-mustakõutsikõrts-visittorva.jpg" class="gallery-image">
-                        <img src="/assets/img/kõrtsisissepääs-mustkõuts-visittorva.jpg" class="gallery-image">
+                        <img src="../assets/img/mustkõuts-visittorva.jpg" class="gallery-image">
+                        <img src="../assets/img/magustoit-mustakõutsikõrts-visittorva.jpg" class="gallery-image">
+                        <img src="../assets/img/kõrtsisissepääs-mustkõuts-visittorva.jpg" class="gallery-image">
+                        <img src="../assets/img/3.jpg" class="gallery-image">
+                        <img src="../assets/img/6.jpg" class="gallery-image">
+                        <img src="../assets/img/10.jpg" class="gallery-image">
+                        <img src="../assets/img/13.jpg" class="gallery-image">
+                        <img src="../assets/img/16.jpg" class="gallery-image">
                     </div>
                 </div>
             </div>
@@ -176,13 +202,13 @@
                 <div class="contact-info">
                     <h3>Must Kõuts</h3>
                     <b>Musta Kõutsi Kõrts</b>
-                    <b>Tartu tn 2a, Tõrva linn, Tõrva vald, Valga maakond</b>
+                    <b href="">Tartu tn 2a, Tõrva linn, Tõrva vald, Valga maakond</b>
                     <b>68606</b>
-                    <b>info@mustkouts.ee</b>
+                    <b><a href="mailto:info@mustkouts.ee">info@mustkouts.ee</a></b>
                     <b>+372 520 5588</b>
                 </div>
                 <div class="social-info">
-                    <a href="https://www.facebook.com/profile.php?id=100063668694985" target="_blank"><img src="/assets/icons/icons8-facebook.svg"><p>Facebook</p></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063668694985" target="_blank"><img src="../assets/icons/icons8-facebook.svg"><p>Facebook</p></a>
                 </div>
             </div>
             <b class="footer-bottom">© 2024 Must Kõuts</b>

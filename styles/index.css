@@ -57,9 +57,11 @@ a{
     text-decoration: none;
     font-family: "Merriweather", serif;
     transition: 0.2s;
+    text-shadow: 2px 3px 3px black;
 }
 
 a:hover{
+    text-shadow: none;
     text-decoration: underline;
 }
 
@@ -204,16 +206,19 @@ footer{
 .welcome-text h1{
     margin: 0;
     text-align: center;
+    text-shadow: 2px 3px 3px black;
 }
 .welcome-text h3{
     margin: 0;
     text-align: center;
     color: #F8F2DC;
+    text-shadow: 2px 3px 3px black;
 }
 .welcome-text h4{
     margin: 0;
     text-align: center;
     color: #F8F2DC;
+    text-shadow: 2px 3px 3px black;
 }
 .welcome-text-additional{
     display: flex;
@@ -425,7 +430,8 @@ section[id="events"]{
     position: absolute;
     width: auto;
     padding: 20px;
-    color:#481D24;
+    color: #481D24;
+    text-shadow: none;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -434,18 +440,18 @@ section[id="events"]{
 }
 
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 20px;
+    border-radius: 3px;
 }
 
 .prev{
-    left: 0;
-    border-radius: 0px 3px 3px 0px;
+    left: 20px;
+    border-radius: 3px;
 }
 
 .prev:hover, .next:hover {
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #481D24;
     color:#F8F2DC;
 }
 
@@ -566,6 +572,26 @@ section[id="partners"]{
     }
 }
 
+section[id="location"]{
+    display: flex;
+    min-height: 60vh;
+}
+
+.location-container{
+    width: 100%;
+    height: 100%;
+}
+
+.location{
+    height: 60vh;
+    border-bottom: 4px solid#481D24;
+}
+
+.location iframe{
+    width: 100%;
+    height: 100%;
+}
+
 .contact-container{
     display: flex;
     justify-content: space-around;
@@ -583,6 +609,7 @@ section[id="partners"]{
 }
 .contact-info a{
     color:#481D24;
+    text-shadow: none;
 }
 
 .social-info{
@@ -597,6 +624,7 @@ section[id="partners"]{
     justify-content: center;
     align-items: center;
     gap: 1em;
+    text-shadow: none;
     color: #481D24;
 }
 

@@ -1,13 +1,13 @@
 //image carousel using the background image of the container
 let imageIndex = 0;
 const carouselImages = [
-    "../assets/img/mustkõuts-visittorva-visitestonia.jpg",
-    "../assets/img/mustkõuts-suursaal-visittorva.jpg",
-    "../assets/img/mustakõutsi-visittorva-visitestonia.jpg",
-    "../assets/img/mustk-visittorva-visitviljandi2.jpg",
-    "../assets/img/mustkõuts-terrass-visittorva.jpg",
-    "../assets/img/mustkõuts-visittorva1.jpg",
-    "../assets/img/puhkenurk-mustkõuts-tõrva.jpg",
+    "../assets/img/mustkõuts-visittorva-visitestonia.webp",
+    "../assets/img/mustkõuts-suursaal-visittorva.webp",
+    "../assets/img/mustakõutsi-visittorva-visitestonia.webp",
+    "../assets/img/mustk-visittorva-visitviljandi2.webp",
+    "../assets/img/mustkõuts-terrass-visittorva.webp",
+    "../assets/img/mustkõuts-visittorva1.webp",
+    "../assets/img/puhkenurk-mustkõuts-tõrva.webp",
 ];
 const imageContainer = document.querySelector(".home-container");
 setInterval(() => {

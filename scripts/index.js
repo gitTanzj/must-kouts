@@ -114,8 +114,8 @@ for (var i = 0; i < galleryImages.length; i++) {
     }
 };
 
-for(let i = 1; i < galleryImages.length; i++) {
-    galleryImages[i].alt = `gallery-${i}`
+for(let i = 0; i < galleryImages.length; i++) {
+    galleryImages[i].alt = `gallery-${i + 1}`
 }
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];

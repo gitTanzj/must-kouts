@@ -23,6 +23,12 @@ body{
     line-height: 1.4;
 }
 
+@media screen and (max-width: 1024px){
+    body{
+        margin: 1em;
+    }
+}
+
 h1{
     font-size: 72px;
     font-weight: 900;
@@ -42,6 +48,10 @@ h4{
     font-size: 24px;
     font-weight: 900;
     font-family: "Sedan SC", serif;
+}
+
+b{
+    font-size: 1em;
 }
 
 
@@ -305,6 +315,7 @@ footer{
 @media screen and (max-width: 1024px){
     .about-container{
         flex-direction: column;
+        border-radius: 10px;
     }
     .about-container h1{
         text-align: center;
@@ -372,6 +383,9 @@ footer{
 }
 
 @media screen and (max-width: 1024px){
+    .menu-container{
+        border-radius: 10px;
+    }
     .menu-header{
         padding: 2em;
     }
@@ -387,7 +401,7 @@ footer{
 
 section[id="events"]{
     scroll-padding-top: 100px;
-    min-height: 60vh;
+    min-height: 50vh;
     margin-bottom: 2em;
 }
 
@@ -407,25 +421,31 @@ section[id="events"]{
     opacity: 0;
     justify-content: space-around;
     padding: 5%;    
-    min-height: 50vh;
+    min-height: 40vh;
     width: 80%;
     color:#481D24;
     transition: all 0.4s;
 }
+.event-image{
+    display: flex;
+    flex: 1;
+}
 .event img{
-    width: 30%;
+    width: 100%;
     border-radius: 5px;
 }
 .event-text{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    justify-content: center;
+    flex: 1;
 }
 .event-text h2{
     padding-bottom: 0.5em;
 }
   
-.prev, .next {
+.navigate {
+    display: none;
     cursor: pointer;
     position: absolute;
     width: auto;
@@ -439,17 +459,12 @@ section[id="events"]{
     user-select: none;
 }
 
-.next {
+.navigate {
     right: 20px;
     border-radius: 3px;
 }
 
-.prev{
-    left: 20px;
-    border-radius: 3px;
-}
-
-.prev:hover, .next:hover {
+.navigate {
     text-decoration: none;
     background-color: #481D24;
     color:#F8F2DC;
@@ -460,6 +475,9 @@ section[id="events"]{
 }
 
 @media screen and (max-width: 1024px){
+    .events{
+        border-radius: 10px;
+    }
     .event{
         flex-direction: column;
         gap: 1em;
@@ -568,7 +586,7 @@ section[id="partners"]{
         gap: 1em;
     }
     .partner{
-        width: 90%;
+        width: 100%;
     }
 }
 

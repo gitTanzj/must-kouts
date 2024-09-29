@@ -1,3 +1,12 @@
+let events = document.getElementsByClassName("events")[0]
+let eventNavigators = document.getElementsByClassName('navigate')
+if(events.childElementCount > 1){
+    eventNavigators.forEach((navigator) => {
+        navigator.style.display = "block"
+    })
+}
+
+
 //image carousel using the background image of the container
 let imageIndex = 0;
 const carouselImages = [
